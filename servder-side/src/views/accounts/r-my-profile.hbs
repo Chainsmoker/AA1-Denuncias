@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {{> head }}
+</head>
+
+<body class="bg-body-bg">
+    {{> preloader }}
+    {{> sidebar }}
+    <div class="container-fluid">
+        <div class="main-content d-flex flex-column">
+            {{>header}}
+            <div class="main-content-container overflow-hidden">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4 mt-1">
+                    <h3 class="mb-0"></h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb align-items-center mb-0 lh-1">
+                            <li class="breadcrumb-item">
+                                <a href="/dashboard" class="d-flex align-items-center text-decoration-none">
+                                    <i class="ri-home-8-line fs-15 text-primary me-1"></i>
+                                    <span class="text-body fs-14 hover">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <span class="text-secondary">Perfil</span>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="social-profile">
+                    <div class="card border-0 bg-white rounded-10 mb-4">
+                        <div class="position-relative">
+                            <img src="/assets/images/profile-big-cover.jpg" class="rounded-top-3 w-100"
+                                alt="profile-cover">
+                            <div class="position-absolute z-1" style="bottom: 20px; right: 20px;">
+                                <button class="btn btn-primary text-white fs-16 fw-normal hover rounded-1"
+                                    style="padding: 14px 26px; display: none">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card border-0 rounded-10 p-20 pb-0 rounded-top-0 profile-info"
+                            style="background-color: transparent !important;">
+                            <div class="d-flex justify-content-between align-items-end flex-wrap gap-3">
+                                <div class="d-flex align-items-end">
+                                    <div class="flex-shrink-0 position-relative">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                data-bs-title="Tamaño (190x190)">
+                                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                                <label for="imageUpload"></label>
+                                            </div>
+                                            <div class="avatar-preview">
+                                                <div id="imagePreview"
+                                                    style="background-image: url(https://angular.hibootstrap.com/daxa/images/profile.jpg);">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 ms-20 mb-45">
+                                        <h3 class="mb-1">Juan Perez</h3>
+                                        <span class="fs-16"><a href="javascript:void(0);">juancitoperez@gmail.com</a></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="nav nav-tabs profile-tabs border-0 justify-content-center gap-2" id="myTab"
+                                role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a href="/dashboard/profile"
+                                        class="nav-link rounded-0 fs-16 border-0 p-0 bg-transparent text-body active">Perfil</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a href="/dashboard/profile/settings"
+                                        class="nav-link rounded-0 fs-16 border-0 p-0 bg-transparent text-body">Configuración</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xxl-3 col-xxxl-12">
+                        <div class="card bg-white border border-white rounded-10 p-20 mb-4">
+                            <h3 class="mb-20">Información</h3>
+                            <ul class="p-0 mb-0 list-unstyled last-child-none">
+                                <li class="mb-10 fs-16">ID: <span class="text-secondary">7001</span></li>
+                                <li class="mb-10 fs-16">Nombre Completo: <span class="text-secondary">Juan Perez</span>
+                                </li>
+                                <li class="mb-10 fs-16">Correo Electrónico: <span class="text-secondary"><a
+                                            href="mailto:juancitoperez@gmail.com">juancitoperez@gmail.com</a></span>
+                                </li>
+                                <li class="mb-10 fs-16">Rol: <span class="text-secondary">Usuario</span></li>
+                                <li class="mb-10 fs-16">Ubicación: <span class="text-secondary">Comas, Lima</span>
+                                </li>
+                                <li class="mb-10 fs-16">Fecha de Registro: <span class="text-secondary">Octubre 10, 2025</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xxl-9 col-xxxl-12">
+                        <div class="card bg-white rounded-10 border border-white mb-4">
+                            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 p-20">
+                                <h3>Mis Denuncias</h3>
+                            </div>
+
+                            <div class="default-table-area mx-minus-1 table-all-projects">
+                                <div class="table-responsive">
+                                    <table class="table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="fw-medium">ID</th>
+                                                <th scope="col" class="fw-medium">Usuario</th>
+                                                <th scope="col" class="fw-medium">Fecha</th>
+                                                <th scope="col" class="fw-medium">Descripción</th>
+                                                <th scope="col" class="fw-medium">Distrito</th>
+                                                <th scope="col" class="fw-medium">Estado</th>
+                                                <th scope="col" class="fw-medium">Acción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{> incidents/incident-row }}
+                                            {{> incidents/incident-row }}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                {{> paginator }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xxl-12 col-xxxl-12">
+                                <div class="card bg-white border border-white rounded-10 p-20 mb-4">
+                                    <h3 class="mb-20">Actividad Reciente</h3>
+
+                                    <ul class="p-0 mb-20 list-unstyled last-child-none">
+                                        <li class="pb-3 mb-3 border-light border-bottom">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0">
+                                                    <img src="/assets/images/user1.jpg" class="rounded-circle"
+                                                        style="width: 50px; height: 50px;" alt="user1">
+                                                </div>
+                                                <div class="flex-grow-1 ms-12 position-relative top-2">
+                                                    <h6 class="fs-16 fw-medium mb-1" style="margin-bottom: 2.5px;">
+                                                        Juan Perez</h6>
+                                                    <span class="fs-14 text-body d-block mb-1">10 de Octubre, 2025 (09:30 AM)</span>
+                                                    <p class="fs-16">Juan Perez ha creado una nueva denuncia.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-grow-1"></div>
+
+            {{>footer}}
+        </div>
+    </div>
+    {{>scripts}}
+</body>
+
+</html>

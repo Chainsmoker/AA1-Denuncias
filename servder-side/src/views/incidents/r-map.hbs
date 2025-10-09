@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {{>head}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.4.0/ol.css">
+    <style>
+        #map {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+
+<body class="bg-body-bg">
+    {{>preloader}}
+    {{>sidebar}}
+    <div class="container-fluid">
+        <div class="main-content d-flex flex-column">
+            {{>header}}
+
+            <div class="main-content-container overflow-hidden">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4 mt-1">
+                    <h3 class="mb-0">Denuncias</h3>
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb align-items-center mb-0 lh-1">
+                            <li class="breadcrumb-item">
+                                <a href="/dashboard" class="d-flex align-items-center text-decoration-none">
+                                    <i class="ri-home-8-line fs-15 text-primary me-1"></i>
+                                    <span class="text-body fs-14 hover">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="/dashboard/incidents" class="d-flex align-items-center text-decoration-none">
+                                    <span class="text-body fs-14 hover">Denuncias</span>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <span class="text-secondary">Mapa</span>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div id="map"></div>
+            </div>
+            <div class="flex-grow-1"></div>
+            {{>footer}}
+        </div>
+    </div>
+    {{>scripts}}
+
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
+    <script type="text/javascript">
+        const denuncias = [
+            { lon: -77.0428, lat: -12.0464, peso: 1.0 },
+            { lon: -77.0333, lat: -12.1211, peso: 1.0 },
+            { lon: -76.9847, lat: -12.0653, peso: 1.0 },
+            
+            { lon: -71.5375, lat: -16.4090, peso: 1.0 },
+            { lon: -71.5310, lat: -16.3988, peso: 1.0 },
+
+            { lon: -71.9675, lat: -13.5319, peso: 1.0 },
+            { lon: -71.9744, lat: -13.5171, peso: 1.0 },
+
+            { lon: -80.6328, lat: -5.1945, peso: 1.0 },
+            { lon: -80.6400, lat: -5.2000, peso: 1.0 },
+
+            { lon: -79.0288, lat: -8.1158, peso: 1.0 },
+            { lon: -79.0200, lat: -8.1200, peso: 1.0 },
+
+            { lon: -73.2472, lat: -3.7491, peso: 1.0 },
+
+            { lon: -74.5353, lat: -8.3791, peso: 1.0 },
+
+            { lon: -75.2100, lat: -12.0650, peso: 1.0 },
+
+            { lon: -70.0236, lat: -15.8402, peso: 1.0 },
+
+            { lon: -78.5003, lat: -7.1628, peso: 1.0 },
+
+            { lon: -74.2255, lat: -13.1588, peso: 1.0 },
+
+            { lon: -70.2470, lat: -18.0066, peso: 1.0 },
+
+            { lon: -78.5783, lat: -9.0745, peso: 1.0 },
+
+            { lon: -80.4530, lat: -3.5669, peso: 1.0 },
+
+            { lon: -70.9350, lat: -17.1927, peso: 1.0 },
+
+            { lon: -69.1833, lat: -12.6000, peso: 1.0 }
+        ];
+
+        const features = denuncias.map(d => {
+            return new ol.Feature({
+                geometry: new ol.geom.Point(ol.proj.fromLonLat([d.lon, d.lat])),
+                weight: d.peso
+            });
+        });
+
+        const heatmapLayer = new ol.layer.Heatmap({
+            source: new ol.source.Vector({
+                features: features
+            }),
+            blur: 25,
+            radius: 15,
+            weight: 'weight'
+        });
+
+        const osmBaseLayer = new ol.layer.Tile({
+            source: new ol.source.OSM()
+        });
+
+        const map = new ol.Map({
+            target: 'map',
+            layers: [
+                osmBaseLayer,
+                heatmapLayer
+            ],
+            view: new ol.View({
+                center: ol.proj.fromLonLat([-75.0152, -9.1899]),
+                zoom: 5
+            })
+        });
+    </script>
+
+</body>
+
+</html>

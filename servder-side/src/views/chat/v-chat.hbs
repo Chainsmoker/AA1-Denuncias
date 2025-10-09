@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {{> head }}
+</head>
+
+<body class="bg-body-bg">
+    {{> preloader }}
+    {{> sidebar }}
+    <div class="container-fluid">
+        <div class="main-content d-flex flex-column">
+            {{> header }}
+            <div class="main-content-container overflow-hidden">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4 mt-1">
+                    <h3 class="mb-0">Chat</h3>
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb align-items-center mb-0 lh-1">
+                            <li class="breadcrumb-item">
+                                <a href="/dashboard" class="d-flex align-items-center text-decoration-none">
+                                    <i class="ri-home-8-line fs-15 text-primary me-1"></i>
+                                    <span class="text-body fs-14 hover">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <span class="text-secondary">Chat</span>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-5 col-xxl-4">
+                        <div class="card bg-white rounded-10 border border-white mb-4 pb-20">
+                            <div class="p-20">
+                                <h3 class="mb-20">Mensajes</h3>
+                                <form class="table-src-form position-relative ms-0 mb-20">
+                                    <input type="text" class="form-control w-100" style="height: 45px;"
+                                        placeholder="Buscar...">
+                                    <div
+                                        class="src-btn position-absolute top-50 start-0 translate-middle-y bg-transparent p-0 border-0">
+                                        <span class="material-symbols-outlined">search</span>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-content chat-lists" id="myTabContent">
+                                <div class="tab-pane fade show active" id="all-message-tab-pane" role="tabpanel"
+                                    aria-labelledby="all-message-tab" tabindex="0">
+                                    <div style="height: 630px; margin: 0 -1px;" class="scroll-bar">
+                                        <ul class="p-0 mb-0 list-unstyled chat-list last-child-only-border-none">
+                                            <li class="border-bottom border-light d-flex justify-content-between align-items-center active"
+                                                style="padding: 16.5px 20px;">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0 position-relative">
+                                                        <img src="/assets/images/user2.jpg" class="rounded-circle"
+                                                            style="width: 45px; height: 45px;" alt="user2">
+                                                        <span
+                                                            class="d-block border border-2 border-white bg-success rounded-circle position-absolute bottom-0 end-0"
+                                                            style="width: 10px; height: 10px;"></span>
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-12">
+                                                        <h4 class="fs-16 fw-medium mb-0">Juan Perez</h4>
+                                                        <span class="fs-14 text-body d-block"
+                                                            style="margin-top: 5px;">Hola...</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span class="fs-14 d-block">Hoy 9:10 PM</span>
+                                                    <span
+                                                        class="d-block bg-danger text-white rounded-circle text-center fs-11 ms-auto"
+                                                        style="width: 16px; height: 16px; line-height: 16px; margin-top: 2px;">2</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-xxl-8">
+                        <div class="card bg-white rounded-10 border border-white mb-4">
+                            <div
+                                class="p-20 d-flex justify-content-between align-items-center border-bottom border-border-color-60 chat-header">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0 position-relative">
+                                        <img src="/assets/images/user1.jpg" class="rounded-circle"
+                                            style="width: 65px; height: 65px;" alt="user1">
+                                    </div>
+                                    <div class="flex-grow-1 ms-3 position-relative top-3">
+                                        <h4 class="fs-18 fw-medium mb-0">Juan Perez</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chat-body scroll-bar" style="height: 585px;">
+                                <ul class="p-20 mb-0 list-unstyled chat-details chat-reverse">
+                                    <li class="mb-20">
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0">
+                                                <img src="/assets/images/user1.jpg" class="rounded-circle"
+                                                    style="width: 35px; height: 35px;" alt="user1">
+                                            </div>
+                                            <div class="flex-grow-1 ms-10">
+                                                <div>
+                                                    <p class="lh-1-8 bg-light fs-16 d-inline-block bg-for-dark"
+                                                        style="padding: 10px 15px; border-radius: 0 10px 10px 10px; margin-bottom: 6px;">
+                                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem cumque ipsam optio facilis sed quia blanditiis tenetur culpa esse necessitatibus ut veniam, voluptates, molestias obcaecati vel labore laudantium maiores voluptatem?</p>
+                                                </div>
+                                                <div>
+                                                    <p class="lh-1-8 bg-light fs-16 d-inline-block bg-for-dark"
+                                                        style="padding: 10px 15px; border-radius: 0 10px 10px 10px; margin-bottom: 6px;">
+                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium deserunt exercitationem sequi. Blanditiis quidem, veniam obcaecati facere deleniti ea nulla saepe veritatis itaque explicabo praesentium optio unde. Rem, adipisci dolor.</p>
+                                                </div>
+                                                <span class="fs-14 d-block">09:10 AM</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="mb-20">
+                                        <div class="d-flex text-end">
+                                            <div class="flex-grow-1">
+                                                <div>
+                                                    <p class="lh-1-8 bg-primary text-white fs-16 d-inline-block bg-for-dark"
+                                                        style="padding: 10px 15px; border-radius: 10px 0 10px 10px; margin-bottom: 6px;">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+                                                        doloremque!</p>
+                                                </div>
+                                                <span class="fs-14 d-block">09:20 AM</span>
+                                            </div>
+                                            <div class="flex-shrink-0 ms-10">
+                                                <img src="/assets/images/admin.png" class="rounded-circle"
+                                                    style="width: 35px; height: 35px;" alt="admin">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="p-20">
+                                <div class="bg-light p-20 rounded-10 chat-submit">
+                                    <div class="d-flex gap-2 flex-wrap align-items-center">
+                                        <div class="flex-shrink-0">
+                                            <ul class="p-0 mb-0 list-unstyled d-flex align-items-center"
+                                                style="gap: 12px;">
+                                                <li>
+                                                    <button class="bg-transparent p-0 border-0">
+                                                        <i
+                                                            class="material-symbols-outlined fs-20 text-body position-relative top-3 hover-text">sentiment_satisfied</i>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="bg-transparent p-0 border-0">
+                                                        <i
+                                                            class="material-symbols-outlined fs-20 text-body position-relative top-3 hover-text">image</i>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="flex-grow-1 ms-20">
+                                            <form class="position-relative z-1 your-message-padding"
+                                                style="padding-right: 70px;">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control border-white"
+                                                        style="height: 57px; min-height: 57px; padding: 10px 15px;"
+                                                        id="floatingInput2" placeholder="Type your message....">
+                                                    <label for="floatingInput2"
+                                                        style="height: 57px; min-height: 57px; padding: 16px 15px;">Escribe tu mensaje....</label>
+                                                </div>
+                                                <button type="button"
+                                                    class="border-0 btn btn-primary p-0 position-absolute top-0 end-0"
+                                                    style="width: 57px; height: 57px;">
+                                                    <i class="material-symbols-outlined text-white"
+                                                        style="line-height: 57px;">send</i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-grow-1"></div>
+            {{> footer }}
+        </div>
+    </div>
+    {{> scripts }}
+</body>
+
+</html>

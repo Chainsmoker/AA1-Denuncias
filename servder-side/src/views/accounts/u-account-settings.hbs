@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {{>head}}
+</head>
+
+<body class="bg-body-bg">
+    {{>preloader}}
+    {{>sidebar}}
+    <div class="container-fluid">
+        <div class="main-content d-flex flex-column">
+            {{>header}}
+
+            <div class="main-content-container overflow-hidden">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4 mt-1">
+                    <h3 class="mb-0">Configuración</h3>
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb align-items-center mb-0 lh-1">
+                            <li class="breadcrumb-item">
+                                <a href="/dashboard" class="d-flex align-items-center text-decoration-none">
+                                    <i class="ri-home-8-line fs-15 text-primary me-1"></i>
+                                    <span class="text-body fs-14 hover">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="/dashboard/profile" class="d-flex align-items-center text-decoration-none">
+                                    <span class="text-body fs-14 hover">Perfil</span>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <span class="text-secondary">Configuración</span>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="card bg-white border border-white rounded-10 p-20 mb-4">
+                    <ul class="ps-0 mb-4 list-unstyled d-flex flex-wrap gap-2 gap-lg-3">
+                        <li>
+                            <a href="javascript:void(0);"
+                                class="btn btn-primary border-primary bg-primary text-white fs-16 fw-normal px-3 px-lg-4">Configuración</a>
+                        </li>
+                        <li>
+                            <a href="/dashboard/profile/change-password"
+                                class="btn btn-primary border-border-color-70 bg-transparent text-secondary fs-16 fw-normal px-3 px-lg-4">Cambiar
+                                Contraseña</a>
+                        </li>
+                    </ul>
+
+                    <div class="mb-20">
+                        <h3 class="mb-1 fs-22">Perfil</h3>
+                        <p class="fs-16 lh-1-8">Actualiza tu foto y detalles personales aquí.</p>
+                    </div>
+
+                    <form>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-20">
+                                    <label class="label fs-16 mb-2">Nombres</label>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput1" value="Juaneco">
+                                        <label for="floatingInput1">Nombres</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-20">
+                                    <label class="label fs-16 mb-2">Apellidos</label>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput2" value="Perez">
+                                        <label for="floatingInput2">Apellidos</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-20">
+                                    <label class="label fs-16 mb-2">Correo Electrónico</label>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput3"
+                                            value="juancitoperez@gmail.com">
+                                        <label for="floatingInput3">Correo Electrónico</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-20">
+                                    <label class="label fs-16 mb-2">Teléfono</label>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput4"
+                                            value="972384756">
+                                        <label for="floatingInput4">Teléfono</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-20">
+                                    <label class="label fs-16 mb-2">DNI</label>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput4"
+                                            value="12345678">
+                                        <label for="floatingInput4">DNI</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-20">
+                                    <label class="label fs-16 mb-2">Región</label>
+                                    <div class="form-floating">
+                                        <select class="form-select form-control" id="floatingSelect8"
+                                            aria-label="Floating label select example">
+                                            <option selected>Lima</option>
+                                            <option value="1">Arequipa</option>
+                                            <option value="2">Ayacucho</option>
+                                            <option value="2">Cusco</option>
+                                        </select>
+                                        <label for="floatingInput5">Región</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-20">
+                                    <label class="label fs-16 mb-2">Distrito</label>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput6"
+                                            value="Comas">
+                                        <label for="floatingInput6">Distrito</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-20">
+                                    <label class="label fs-16 mb-2">Dirección</label>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="floatingInput6"
+                                            value="Av. Universitaria 2445">
+                                        <label for="floatingInput6">Dirección</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-20">
+                                    <label class="label fs-16 mb-2">Género</label>
+                                    <div class="form-floating">
+                                        <select class="form-select form-control" id="floatingSelect8"
+                                            aria-label="Floating label select example">
+                                            <option selected>Seleccionar</option>
+                                            <option value="2">Femenino</option>
+                                            <option value="2">Masculino</option>
+                                        </select>
+                                        <label for="floatingSelect8">Seleccionar</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-20">
+                                    <h3 class="mb-1 fs-22">Foto de perfil</h3>
+                                    <p class="fs-16 lh-1-8">Esta será mostrada en tu perfil.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group mb-4 only-file-upload" id="file-upload">
+                                    <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
+                                        <div class="product-upload">
+                                            <label class="file-upload mb-0">
+                                                <i
+                                                    class="ri-folder-image-line bg-primary bg-opacity-10 p-2 rounded-1 text-primary"></i>
+                                                <span class="d-block text-body fs-14">Arrastra y suelta una imagen o <span
+                                                        class="text-primary text-decoration-underline">Explorar</span></span>
+                                            </label>
+                                            <label class="position-absolute top-0 bottom-0 start-0 end-0 cursor"
+                                                id="upload-container">
+                                                <input class="form__file bottom-0" id="upload-files" type="file"
+                                                    multiple="multiple">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div id="files-list-container"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-primary fw-normal text-white">Actualizar
+                                        perfil</button>
+                                    <button type="button" class="btn btn-danger fw-normal text-white"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="flex-grow-1"></div>
+
+            {{>footer}}
+        </div>
+    </div>
+    {{>scripts}}
+</body>
+</html>
